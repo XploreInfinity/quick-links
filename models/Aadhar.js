@@ -37,4 +37,4 @@ const AadharSchema = mongoose.Schema({
         unique:true
     }
 })
-module.exports =mongoose.model('',AadharSchema)
+module.exports =mongoose.model('Aadhar',AadharSchema)
