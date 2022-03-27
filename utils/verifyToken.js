@@ -12,8 +12,6 @@ const verifyToken=async (token)=>{
         const userid = payload['sub'];
         // If request specified a G Suite domain:
         // const domain = payload['hd'];
-        console.log(userid)
-        console.log(payload)
         return {status:200,payload:payload,userInDB:false}
     }
     else{
