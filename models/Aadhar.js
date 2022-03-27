@@ -4,8 +4,8 @@ const AadharSchema = mongoose.Schema({
         type: String,
         required:true,
         unique:true,
-        Max:12,
-        Min:12
+        minLength:12,
+        maxLength:12
     },
     fname:{
         type:String,

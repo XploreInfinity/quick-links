@@ -10,8 +10,21 @@
     <div class="content">
         <h1>Welcome, <%=user.name%></h1>
         <img src="<%=user.picture%>" /><br />
-        <a href="/aadharlink">Link your aadhar card</a><br />
-        <a href="/logout">Sign Out</a>
+        <a href="/logout">Sign Out</a><br/>
+        <%if(!verifiedUser){%>
+            <p>
+                Aadhar Link Status: Not Linked<br />
+                <a href="/aadharlink">Link your aadhar card</a>
+            </p>
+            <%}else{%>
+            <img src="/img/verified.png" width="120" height="100"/>
+            <p>
+                Aadhar link status:Linked<br />
+                Aadhar card number: <%=verifiedUser.aadhar%>
+            </p>
+        <%}%>
+        
+        
     </div>
 </body>
 </html>

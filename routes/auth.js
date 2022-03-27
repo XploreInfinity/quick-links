@@ -3,11 +3,11 @@ const dotenv=require('dotenv')
 dotenv.config({path:'../.env'})
 const router=express.Router()
 const verifyToken=require('../utils/verifyToken')
-router.get('/',(req,res)=>{
+router.get('/login',(req,res)=>{
     res.render('login')
 })
 
-router.post('/',async(req,res)=>{
+router.post('/login',async(req,res)=>{
     try{
         const token=req.body.token
         const verification=await verifyToken(token)
@@ -22,5 +22,11 @@ router.post('/',async(req,res)=>{
         console.log(error)
         return res.status(500).json({error:"Server error"})
     }
+})
+
+router.get('/logout',(req,res)=>{
+    //clear the session cookie:
+    res.clearCookie('session-token')
+    res.redirect('/login')
 })
 module.exports=router

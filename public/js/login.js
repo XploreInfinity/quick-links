@@ -1,7 +1,5 @@
 //executes after successful user sign-in:
 async function onSignIn(googleUser) {
-    var profile = googleUser.getBasicProfile();
-
     //to authenticate with our backend server,send an id token(this changes everytime and is verifiable) to it
     var id_token = googleUser.getAuthResponse().id_token;
     try {

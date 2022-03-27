@@ -2,8 +2,10 @@ const express = require('express')
 const mongoose = require('mongoose')
 const dotenv = require('dotenv')
 const cookieParser=require('cookie-parser')
-const loginRoute=require('./routes/login')
+const authRoute=require('./routes/auth')
+const aadharRoute=require('./routes/aadhar')
 const checkAuthenticated = require('./middlewares/checkAuthenticated')
+const User = require('./models/User')
 dotenv.config({path:'./.env'})
 app = express()
 const port = process.env.PORT || 8000
@@ -17,16 +19,12 @@ app.use(cookieParser())
 app.use(express.static('public'))
 app.use(express.urlencoded({extended:true}))
 //Routes:
-app.use('/login',loginRoute)
-
-app.get('/',checkAuthenticated,(req,res)=>{
-    let user=req.user
-    res.render('index',{user})
-})
-app.get('/logout',(req,res)=>{
-    //clear the session cookie:
-    res.clearCookie('session-token')
-    res.redirect('/login')
+app.use('/',authRoute)
+app.use('/aadharlink',aadharRoute)
+app.get('/',checkAuthenticated,async(req,res)=>{
+    let user = req.user
+    const verifiedUser =await User.findOne({gid:user.sub})
+    res.render('index',{user,verifiedUser})
 })
 //Connect to the DB:
 mongoose.connect(db_url,()=>{

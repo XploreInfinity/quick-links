@@ -8,9 +8,6 @@ const verifyToken=async (token)=>{
     });
     const payload = ticket.getPayload();
     //Ensure aud claim contains our app's client ID. If it does, then the token is both valid and intended for us,otherwise, it is a malicious request:
-    //TODO:REMOVE DEBUG OUTPUT:
-    console.log(client_id)
-    console.log(payload)
     if(payload['aud']==client_id){
         const userid = payload['sub'];
         // If request specified a G Suite domain:
