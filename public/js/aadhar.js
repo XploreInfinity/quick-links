@@ -2,12 +2,15 @@ $("document").ready(()=>{
     const aadhar_regexp=/^[0-9]{12}$/
     const otp_regexp=/^[0-9]{6}$/
     const err_lbl=$("#err_lbl") 
+    const formSubtitle = $("#form-subtitle")
     //Hide the 2nd step(OTP verification step) until the first step completes...
+    // $(".step1").hide()
     $(".step2").hide()
 
     //Events:
     $("#sendOTP_btn").on("click",async()=>{
         err_lbl.text("")
+        formSubtitle.hide();
         let aadhar = $("#aadhar_tf").val()
         if(aadhar_regexp.test(aadhar)){
             try{

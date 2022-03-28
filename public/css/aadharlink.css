@@ -1,3 +1,71 @@
+.aadhaar-form{
+    border: 2px solid #ddd;
+    width: 35%;
+    margin: 2em auto;
+}
+
+.form-title{
+    /* border: 2px solid blue; */
+    width: max-content;
+    margin: 0 auto;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+}
+.form-subtitle{
+    /* border: 2px solid blue; */
+    width: max-content;
+    margin: 0 auto;
+    margin-bottom: 1em;
+}
+.step1, .step2{
+    /* width: 60%; */
+    display: flex;
+    flex-direction: column;
+    margin: 1em auto;
+}
+.step1 > input, .step2 > input {
+    display: inline-block;
+    padding: 0.8em 0.8em;
+    width: 95%;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+    transition: transform 150ms linear;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    color: black;
+    font-weight: 400;
+    outline: none;
+    margin: auto;
+}
+.form label{
+    display: inline-block;
+    width: 95%;
+    margin: 0.5em auto;
+}
+#sendOTP_btn {
+    margin: 1em auto;
+    width: 95%;
+    border: 1px solid #3C3B4D;
+    padding: 0.8em 1em;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 5px;
+    background: #3C3B4D;
+    color: #fff;
+}
+#verifyOTP_btn {
+    margin: 1em auto;
+    width: 95%;
+    /* border: 1px solid #3C3B4D; */
+    padding: 0.8em 1em;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 5px;
+    background: #3db166;
+    color: #fff;
+}
+/* #send-OTP-btn:hover{
+    background: #fff;
+    color: #3C3B4D;
+} */
 #err_lbl{
     color:red;
     font-size: 0.7em;

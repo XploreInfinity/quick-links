@@ -4,6 +4,7 @@ async function onSignIn(googleUser) {
     var id_token = googleUser.getAuthResponse().id_token;
     try {
       var response=await axios.post('http://localhost:8000/login',{token:id_token})
+      signOut()
       if(response.status==200)
         location.assign('/')
     } catch (error) {

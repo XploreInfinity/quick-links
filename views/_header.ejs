@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="css/header.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-left">
+                <img src="img/aadhaar-1.svg" alt="" class="logo">
+                <p>
+                    <a href="/" class="site-title">Email-Aadhaar</a>
+                </p>
+            </div>
+            <div class="navbar-center">
+
+            </div>
+            <div class="navbar-right">
+                <%if(user){%>
+                    <a href="/logout" class="btn logout-btn">Logout</a>
+                    <div class="user-info">
+                        <p class="user-name">
+                            <%=user.name%>
+                        </p>
+                        <img src="<%=user.picture%>" class="user-picture" />
+                    </div>
+                    <%}else{%>
+                        <!-- <button>Login</button> -->
+                        <%}%>
+
+            </div>
+        </nav>
+    </header>
+</body>
+
+</html>

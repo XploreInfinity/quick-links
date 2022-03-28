@@ -1,0 +1,60 @@
+header{
+    box-shadow: rgba(3, 27, 78, 0.1) 0px 2px 4px;
+    z-index: 999;
+}
+.navbar{
+    background-color: #3C3B4D;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* box-shadow: rgba(3, 27, 78, 0.1) 0px 2px 4px; */
+    z-index: 999;
+    padding: 1em;
+    color: #fff;
+}
+.navbar > *{
+    display: flex;
+    align-items: center;
+}
+.logo{
+    width: 50px;
+    aspect-ratio: 1;
+    margin-right: 0.4em;
+}
+.site-title{
+    text-decoration: none;
+    font-size: 1.1rem;
+    color: var(--primary-clr);
+    color: #fff;
+}
+.logout-btn{
+    padding: 0.4em 0.9em;
+    margin-right: 0.5em;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    background: 0;
+    border: 1px solid #006eff;
+    color: #006eff;
+}
+.user-info{
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 50vw;
+    padding: 0.2em 0.5em;
+}
+.user-info > *{
+    /* margin-right: 0.5em; */
+}
+.user-name{
+    margin-right: 0.5em;
+    font-size: 0.85rem;
+}
+.user-picture{
+    width: 35px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    cursor: pointer;
+}

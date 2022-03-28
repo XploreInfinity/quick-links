@@ -34,6 +34,7 @@ router.post('/aadhar',checkAuthenticated,async(req,res)=>{
             //Now send a message with the OTP 
             const msg = "Hi "+user.given_name+"! Your OTP for linking your Google account with your Aadhar card is "+otp+". Valid upto 15 mins."
             const sendMsg= await fast2sms.sendMessage({authorization:process.env.F2SMS_KEY,message:msg,numbers:[mobile]})
+            console.log(msg);
             console.log(saveToken)
             return res.status(200).json({mobile:hidden_mob})
         }

@@ -1,30 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/css/index.css">
+    <script src="https://kit.fontawesome.com/c7a8b77fa1.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-    <div class="content">
-        <h1>Welcome, <%=user.name%></h1>
-        <img src="<%=user.picture%>" /><br />
-        <a href="/logout">Sign Out</a><br/>
-        <%if(!verifiedUser){%>
-            <p>
-                Aadhar Link Status: Not Linked<br />
-                <a href="/aadharlink">Link your aadhar card</a>
-            </p>
-            <%}else{%>
-            <img src="/img/verified.png" width="120" height="100"/>
-            <p>
-                Aadhar link status:Linked<br />
-                Aadhar card number: <%=verifiedUser.aadhar%>
-            </p>
-        <%}%>
-        
-        
+    <div class="container-fluid">
+        <%- include('./_header.ejs') %>
+            <section class="section-1">
+                <h1 class="section-1-title">Welcome to Email-Aadhaar <br> Link Portal !</h1>
+                <!-- <img src="<%=user.picture%>" /><br />
+                <a href="/logout">Sign Out</a><br /> -->
+                <%if(!verifiedUser){%>
+                    <p class="aadhaar-link">
+                        <span>
+                            Aadhaar Link Status: <span style="color: red;">Not Linked</span>
+                        </span>
+                        <a href="/aadharlink" class="btn aadhaar-link-btn">Link your Aadhaar ></a>
+                    </p>
+                    <%}else{%>
+                        <div class="verified-div">
+                            <img src="/img/verified2.png" width="120" height="100" />
+                            <p>
+                                <span class="key">Aadhar link status:</span> <span style="color: green;">Linked</span><br />
+                                <span class="key">Aadhar card number:</span> <%=verifiedUser.aadhar%>
+                            </p>
+                        </div>
+                        <%}%>
+            </section>
     </div>
 </body>
+
 </html>

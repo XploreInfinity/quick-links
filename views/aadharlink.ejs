@@ -1,41 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="/js/aadhar.js"></script>
-    <link rel="stylesheet" type="text/css" href="/css/aadharlink.css"/>
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" type="text/css" href="/css/aadharlink.css" />
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quick Link Aadhar</title>
 </head>
+
 <body>
-    <div class="content">
-        <h1>Welcome, <%=user.name%></h1>
+    <%- include('./_header') %>
+        <div class="section-1">
+            <!-- <h1>Welcome, <%=user.name%></h1>
         <img src="<%=user.picture%>" /><br />
-        <a href="/logout">Sign Out</a><br />
-        <% if(verified){%>
-            <img src="/img/verified.png" width="120" height="100"/>
-            <h1>You've already linked your Aadhar with your google account</h1>
-        <%}else{%>
-            <div class="aadhar-form">
-                <form>
-                    <div class="step1">
-                        <label for="aadhar">Aadhar Card:</label>
-                        <input type="" placeholder="Aadhar card you wish to link" id="aadhar_tf"/>
-                        <button type="button" id="sendOTP_btn">Send OTP</button>
-                    </div>
-                    <div class="step2">
-                        <label for="otp"></label>
-                        <input type="number" maxlength="6" id="otp_tf" />
-                        <input type="button" id="verifyOTP_btn" value="Verify" />
-                    </div>
-                    <label id="err_lbl"></label>
-                </form>
-            </div>
-        <%}%>
-        
-    </div>
+        <a href="/logout">Sign Out</a><br /> -->
+            <% if(verified){%>
+                <img src="/img/verified.png" width="120" height="100" />
+                <h1>You've already linked your Aadhar with your google account</h1>
+                <%}else{%>
+                    <form class="aadhaar-form" >
+                        <h3 class="form-title">Link Aadhaar to Email</h3>
+                        <p class="form-subtitle" id="form-subtitle">
+                            An OTP will be sent to your mobile number for verification
+                        </p>
+                        <div class="step1">
+                            <!-- <label for="aadhar">Aadhar Card:</label> -->
+                            <input type="" placeholder="Enter your aadhaar no." id="aadhar_tf" />
+                            <button type="button" id="sendOTP_btn" class="btn">Send OTP</button>
+                        </div>
+                        <div class="step2">
+                            <label for="otp"></label>
+                            <input type="number" maxlength="6" id="otp_tf" placeholder="Enter OTP" />
+                            <input type="button" class="btn" id="verifyOTP_btn" value="Verify" />
+                        </div>
+                        <label id="err_lbl"></label>
+                    </form>
+                    <%}%>
+
+        </div>
 </body>
+
 </html>

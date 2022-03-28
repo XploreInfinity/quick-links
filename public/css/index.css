@@ -1,6 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;0,800;1,100;1,200;1,300;1,700;1,900&display=swap');
+html{
+    font-family: 'Poppins', sans-serif;
+}
+:root{
+    --primary-clr: #293745;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 body{
     animation: appear 1s;
+    color: var(--primary-clr);
 }
+.btn{
+    background-color: 0;
+    border: 0;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 250ms ease-in-out;
+}
+.btn:hover, .btn:focus{
+    transform: scale(1.01);
+}
+
+/* containers */
+.container{
+    width: 80%;
+    margin: auto;
+    /* border: 2px solid red; */
+}
+.container-fluid{
+    width: 100%;
+}
+.section-1{
+    height: 80vh;
+    background-color: #F9FAFE;
+    /* border: 1px solid #F9FAFE; */
+}
+.section-1-title{
+    /* border: 2px solid red; */
+    text-align: center;
+    margin-top: 2em;
+    font-size: 2rem;
+}
+.aadhaar-link{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 1em;
+    
+    /* border: 2px solid red; */
+}
+.aadhaar-link >*{
+    width: max-content;
+    margin: auto;
+    display: inline-block;
+    /* border: 2px solid red; */
+}
+.aadhaar-link-btn{
+    padding: 0.4em 0.9em;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    border-radius: 25px;
+    background: 0;
+    border: 1px solid #006eff;
+    color: #006eff;
+    /* display: inline-block; */
+    margin: 1em auto;
+}
+.sign-in-prompt{
+    /* border: 2px solid red; */
+    width: max-content;
+    margin: auto;
+    text-align: center;
+    text-align: center;
+    font-size: 2rem;
+}
+.g-signin2{
+    display: block;
+    margin: auto;
+    width: max-content;
+    margin-top: 1em;
+}
+.verified-div{
+    /* border: 2px solid red; */
+    width: max-content;
+    margin: 1em auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.verified-div > * {
+    display: block;
+}
+.verified-div p {
+    text-align: center;
+}
+.verified-div .key{
+    font-weight: 600;
+}
+.instructions-div{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.instructions{
+    margin: auto;
+}
+
+/* animations */
 @keyframes appear {
     0% {opacity: 0; transform: translateY(-0.5%);}
     100% {opacity: 1; transform: translateY(0%);}

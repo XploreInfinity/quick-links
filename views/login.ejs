@@ -13,14 +13,15 @@
     <title>Quick Links</title>
 </head>
 <body>
-    <div class="header">
-        <h1>Quick Links</h1>
-    </div>
-    <div class="content">
-        <div class="instructions">
-            <h4>To continue, sign in with your google account</h3>
-            <div class="g-signin2" data-onsuccess="onSignIn"></div>
+    <% user = null %> 
+    <%- include('./_header') %> 
+    <section class="section-1">
+        <div class="instructions-div">
+            <div class="instructions">
+                <h4 class="sign-in-prompt">To Begin Aadhaar verification <br> Sign In with your google account</h3>
+                <div class="g-signin2" data-onsuccess="onSignIn"></div>
+            </div>
         </div>
-    </div>
+    </section>
 </body>
 </html>
